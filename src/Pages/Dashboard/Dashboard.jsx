@@ -8,7 +8,7 @@ const Dashboard = () => {
     queryKey: ["orders"],
     queryFn: async () => {
       try {
-        const res = await fetch("http://localhost:5000/bookingProducts");
+        const res = await fetch(`${import.meta.env.VITE_APP_API_URL}/bookingProducts`);
         const data = await res.json();
         return data;
       } catch (error) {
@@ -20,7 +20,7 @@ const Dashboard = () => {
   // Delete order mutation
   const deleteOrderMutation = useMutation({
     mutationFn: async (id) => {
-      await fetch(`http://localhost:5000/bookingProducts/${id}`, {
+      await fetch(`${import.meta.env.VITE_APP_API_URL}/bookingProducts/${id}`, {
         method: "DELETE",
       });
     },
@@ -33,7 +33,7 @@ const Dashboard = () => {
   // Confirm order mutation
   const confirmOrderMutation = useMutation({
     mutationFn: async (id) => {
-      await fetch(`http://localhost:5000/bookingProducts/${id}`, {
+      await fetch(`${import.meta.env.VITE_APP_API_URL}/bookingProducts/${id}`, {
         method: "PATCH",
         headers: {
           'Content-Type': 'application/json'
@@ -142,7 +142,7 @@ const Dashboard = () => {
       </div>
       <button 
         className="mt-4 p-2 bg-blue-500 text-white rounded" 
-        onClick={() => window.location.href = 'http://localhost:5000/download-orders'}
+        onClick={() => window.location.href = `${import.meta.env.VITE_APP_API_URL}/download-orders`}
       >
         Download Orders
       </button>

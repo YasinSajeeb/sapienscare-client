@@ -45,7 +45,7 @@ const AddProductModal = () => {
         description: editorHtml
       }
 
-      const result = await fetch('http://localhost:5000/products', {
+      const result = await fetch(`${import.meta.env.VITE_APP_API_URL}/products`, {
         method: 'POST',
         headers: {
           'content-type': 'application/json'

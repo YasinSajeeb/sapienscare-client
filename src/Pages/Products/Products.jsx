@@ -10,7 +10,7 @@ const Products = () => {
     queryKey: ["products"],
     queryFn: async () => {
       try {
-        const res = await fetch("http://localhost:5000/products");
+        const res = await fetch(`${import.meta.env.VITE_APP_API_URL}/products`);
         const data = await res.json();
         return data;
       } catch (error) {

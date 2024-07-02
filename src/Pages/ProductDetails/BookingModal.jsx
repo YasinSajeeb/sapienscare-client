@@ -49,7 +49,7 @@ const BookingModal = ({ productName }) => {
     const bookingData = { ...data, productName };
 
     try {
-      const response = await fetch('http://localhost:5000/bookingProducts', {
+      const response = await fetch(`${import.meta.env.VITE_APP_API_URL}/bookingProducts`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
