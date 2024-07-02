@@ -1,5 +1,6 @@
+import logo from '../../../assets/images/Logo/logo.jpg';
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { FaUserSecret } from "react-icons/fa";
 
@@ -75,7 +76,9 @@ const Navbar = () => {
             {navItems}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">Sapiens' Care</a>
+        <Link to="/">
+        <img src={logo} alt='' className='w-20 rounded-full' />
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItems}</ul>
