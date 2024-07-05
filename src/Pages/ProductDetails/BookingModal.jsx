@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useForm, Controller } from "react-hook-form";
+import toast from "react-hot-toast";
 import PhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css';
 import { useLoaderData } from "react-router-dom";
@@ -61,6 +62,7 @@ const BookingModal = ({ productName }) => {
         console.log('Booking successful:', result);
         // Reset form after successful submission
         reset();
+        toast.success("Your Order has been placed successfully. We will call you for confirmation soon.");
         phoneInputRef.current.setState({ value: "" });
         setQuantity("1");
         setTotalPrice(price.toString());
@@ -144,12 +146,12 @@ const BookingModal = ({ productName }) => {
               </div>
               <div className="form-control w-full">
                 <label className="label">
-                  <span className="label-text font-semibold">PIN code</span>
+                  <span className="label-text font-semibold">Area PIN</span>
                 </label>
                 <input
                   type="number"
                   {...register("pin", { required: true })}
-                  placeholder="Type Your PIN code"
+                  placeholder="Type Your Area PIN"
                   className="input input-bordered w-full"
                 />
               </div>

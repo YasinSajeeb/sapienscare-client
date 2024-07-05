@@ -1,7 +1,11 @@
+import './ProductDetails.css';
 import { Parser } from 'html-to-react';
 import { useLoaderData } from 'react-router-dom';
 import { useState } from 'react';
 import BookingModal from './BookingModal';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
+import 'react-photo-view/dist/react-photo-view.css';
+import 'react-quill/dist/quill.snow.css';
 
 const ProductDetails = () => {
   const productDetails = useLoaderData();
@@ -32,13 +36,25 @@ const ProductDetails = () => {
           ))}
         </div>
         <div className="flex flex-col lg:w-full">
-          <img src={mainImage} alt={name} className="w-full h-auto mb-4 rounded-lg" />
+          <PhotoProvider>
+            <PhotoView src={mainImage}>
+            <img src={mainImage} alt={name} className="w-full h-auto mb-4 shadow-lg cursor-pointer rounded-lg" />
+            </PhotoView>
+          </PhotoProvider>
         </div>
       </div>
       <div className="lg:pl-6 lg:w-2/3">
         <h1 className="text-2xl font-bold text-gray-800">{name}</h1>
         <p className="text-xl text-red-500 font-semibold my-4">₹{price}</p>
-        <div className="prose prose-sky max-w-none">{parsedDescription}</div>
+        <div className='my-5'>     
+    <label htmlFor="booking-modal" className="btn btn-primary">Order Now</label>
+    <BookingModal
+    productName = {name}
+    ></BookingModal>
+    </div>
+        <div className="prose prose-sky max-w-none"
+        
+        >{parsedDescription}</div>
       </div>
     </div>
     <div className='text-center my-5'>     

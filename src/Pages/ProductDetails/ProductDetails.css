@@ -1,0 +1,7 @@
+/* Add this to your CSS file */
+
+.prose ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    
+  }

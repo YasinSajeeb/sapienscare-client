@@ -41,6 +41,7 @@ const AddProductModal = () => {
         name: data.productName,
         photoURL: uploadedImages[0] || '',
         extraImages: uploadedImages.slice(1),
+        prevPrice: data.prevPrice,
         price: data.price,
         description: editorHtml
       }
@@ -132,6 +133,15 @@ const AddProductModal = () => {
           </label>
           <input type='file' {...register("image3")} placeholder="Submit an extra photo" accept="image/*" className="file-input file-input-bordered w-full" />
         </div>
+        <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text text-white font-semibold text-base">Previous Price</span>
+              </label>
+              <div className="input-wrapper">
+                <span className="inr-icon text-xl">₹</span>
+                <input type="number" {...register("prevPrice")} placeholder="Type Product Previous Price" className="input input-bordered bg-sky-400 w-full text-white font-medium input-with-icon" />
+              </div>
+            </div>
         <div className="form-control w-full">
               <label className="label">
                 <span className="label-text text-white font-semibold text-base">Price</span>

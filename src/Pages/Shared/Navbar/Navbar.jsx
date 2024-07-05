@@ -17,6 +17,13 @@ const Navbar = () => {
       });
   };
 
+  const smoothScrollToContact = () => {
+    const contactSection = document.getElementById('contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const navItems = (
     <>
       <li>
@@ -30,9 +37,9 @@ const Navbar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/contact" activeClassName="active">
+      <a href="#contact" onClick={smoothScrollToContact}>
           Contact
-        </NavLink>
+        </a>
       </li>
       <li>
         <NavLink to="/aboutus" activeClassName="active">
