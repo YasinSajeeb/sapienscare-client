@@ -14,7 +14,7 @@ const AboutUs = () => {
         {/* Section 2 */}
         <div className="bg-white py-16 px-8 rounded-lg mb-12 shadow-lg animate__animated animate__fadeInRight">
           <p className="text-lg lg:text-xl text-gray-700 leading-relaxed">
-            Established in 2022 by <span className="font-semibold text-sky-600">NUTRIJA</span>, Sapienscare has evolved from a humble beginning in the USA to a leading name in the industry. Our founder's dedication to promoting health and well-being inspired the creation of a business that prioritizes the health goals of our customers.
+            Established in 2022 by <span className="font-semibold text-sky-600">HVMN</span>, Sapienscare has evolved from a humble beginning in the USA to a leading name in the industry. Our founder's dedication to promoting health and well-being inspired the creation of a business that prioritizes the health goals of our customers.
           </p>
         </div>
         {/* Section 3 */}
