@@ -1,0 +1,50 @@
+.notice-container {
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #fcd34d; /* Tailwind bg-yellow-300 equivalent */
+    padding: 1rem; /* Tailwind py-4 equivalent */
+    position: relative;
+}
+
+.notice-text {
+    display: inline-block;
+    animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+    25% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media (max-width: 600px) {
+    .notice-text {
+        animation: scroll-small 18s linear infinite;
+    }
+
+    @keyframes scroll-small {
+        0% {
+            transform: translateX(0%);
+        }
+        15% {
+            transform: translateX(0%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.text-red-700 {
+    color: #b91c1c; /* Tailwind text-red-700 equivalent */
+}
