@@ -8,7 +8,6 @@ import WhatsAppButton from "../WhatsAppButton/WhatsAppButton";
 const Home = () => {
     return (
         <div>
-            <Notice></Notice>
             <Banner></Banner>
             <About></About>
             <FeaturedProducts></FeaturedProducts>
